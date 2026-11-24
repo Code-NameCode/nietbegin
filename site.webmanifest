@@ -1,0 +1,16 @@
+{
+  "name": "NietBegin Stables",
+  "short_name": "NietBegin",
+  "description": "Horse riding lessons, stabling and horse sales near Heidelberg, Gauteng.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F7FC",
+  "theme_color": "#002A22",
+  "icons": [
+    {
+      "src": "/assets/images/brand-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

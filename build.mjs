@@ -394,10 +394,19 @@ function page({ title, description, path, active, body, schemas = [], contactScr
 </html>`;
 }
 
+function relativizePaths(path, content) {
+  const depth = path.split("/").length - 1;
+  if (depth === 0) return content;
+  const prefix = "../".repeat(depth);
+  return content
+    .replaceAll('="/', `="${prefix}`)
+    .replaceAll(", /assets/", `, ${prefix}assets/`);
+}
+
 async function output(path, content) {
   const target = join(root, path);
   await mkdir(dirname(target), { recursive: true });
-  await writeFile(target, content, "utf8");
+  await writeFile(target, relativizePaths(path, content), "utf8");
 }
 
 const homeSchema = {
