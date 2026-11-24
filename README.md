@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="assets/images/nietbegin-logo-transparent.png" alt="NietBegin Stables" width="420">
+  <img src="assets/images/nietbegin-logo-white.png" alt="NietBegin Stables" width="420">
 </h1>
 
 <p align="center">
