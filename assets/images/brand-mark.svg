@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">NietBegin Stables</title>
+  <desc id="desc">An abstract arena rail and horse ear monogram.</desc>
+  <path fill="#0B302A" d="M8 7h48v50H8z"/>
+  <path fill="none" stroke="#F5F7F3" stroke-linecap="square" stroke-width="4" d="M18 46V18l28 28V18"/>
+  <path fill="none" stroke="#A35D32" stroke-width="3" d="M13 51h38"/>
+  <path fill="#F5F7F3" d="m17 17 5-8 5 9zm20 1 6-9 4 13z"/>
+</svg>

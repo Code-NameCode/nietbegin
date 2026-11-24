@@ -1,0 +1,54 @@
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://nietbegin.co.za%{REQUEST_URI} [R=301,L,NE]
+
+RedirectMatch 301 ^/(?:home|index\.php)$ /
+RedirectMatch 301 ^/(?:about|wabout\.php)$ /about/
+RedirectMatch 301 ^/(?:contact|wcontact\.php)$ /contact/
+RedirectMatch 301 ^/cp/39992/(?:for-sale(?:\.php)?)?/?$ /horses-for-sale/
+RedirectMatch 301 ^/cp/40027/(?:lessons(?:\.php)?)?/?$ /riding-lessons/
+RedirectMatch 301 ^/cp/39993/(?:gallery(?:\.php)?)?/?$ /gallery/
+RedirectMatch 301 ^/cp/39994/(?:our-riders(?:\.php)?)?/?$ /gallery/our-riders/
+RedirectMatch 301 ^/cp/39995/(?:nietbegin-stables(?:\.php)?)?/?$ /gallery/stable-yard/
+RedirectMatch 301 ^/cp/40020/(?:mateo(?:\.php)?)?/?$ /horses/mateo/
+RedirectMatch 301 ^/cp/40023/(?:jovani(?:\.php)?)?/?$ /horses/jovani/
+RedirectMatch 301 ^/cp/40024/(?:coco(?:\.php)?)?/?$ /horses/coco/
+RedirectMatch 410 ^/cp/40166(?:/.*)?$
+RedirectMatch 410 ^/p/106259[78](?:/.*)?$
+RedirectMatch 410 ^/(?:wmenu|wevents|wdocs|wfaq|wgallery|wadditional_pages|wnews|wspecials)\.php$
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://report.goodstuffdesigns.co.za; frame-src https://www.google.com https://maps.google.com https://www.facebook.com; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  <FilesMatch "\.(?:avif|webp|jpg|jpeg|png|svg|woff2|css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html?$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
