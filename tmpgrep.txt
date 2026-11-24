@@ -1,1 +1,0 @@
-C:\Users\MARKET~1\AppData\Local\Temp\gs-bash-1795528011718-9e59918e.sh: line 1: grep: command not found
